@@ -4,13 +4,13 @@ Welcome to the Auth repository! This repository dedicated to authentication and 
 
 ## Getting Started
 
-To get started contributing to Atom, follow these steps:
+To get started contributing to Auth, follow these steps:
 
 ### Documentation 
 
-To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/atom/blob/main/TRD.md).  
+To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/auth/blob/main/TRD.md).  
 
-This code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
+The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
 
 ### Installation
 
