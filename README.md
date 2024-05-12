@@ -59,7 +59,7 @@ npx prisma db push
 
 ### Contributing
 
-We welcome contributions from the community! To contribute to Atom UI Components, please follow these guidelines:
+We welcome contributions from the community! To contribute to Auth, please follow these guidelines:
 
 1. Fork the repository
 2. create a new branch for your feature or bug fix.
