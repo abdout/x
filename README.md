@@ -10,7 +10,7 @@ To get started contributing to Atom, follow these steps:
 
 To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/atom/blob/main/TRD.md).  
 
-This code inspierd by this [vedio](https://www.youtube.com/watch?v=1MTyCvS05V4).
+This code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
 
 ### Installation
 
