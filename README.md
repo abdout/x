@@ -1,4 +1,4 @@
-# Atom
+# Auth
 
 Welcome to the Auth repository! This repository dedicated to authentication and authorization for [Databayt](https://github.com/abdout/databayt).
 
@@ -10,7 +10,7 @@ To get started contributing to Atom, follow these steps:
 
 To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/atom/blob/main/TRD.md).  
 
-To review the UI Components Desgin, visit [Figma](https://www.figma.com/file/XhL9031u667fhzTDE4Lq0T/Atom?type=design&node-id=1-3&mode=design&t=o4R5Dal6hV5pzlic-0).
+This code inspierd by this [vedio] (https://www.youtube.com/watch?v=1MTyCvS05V4).
 
 ### Installation
 
