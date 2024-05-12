@@ -70,5 +70,5 @@ We welcome contributions from the community! To contribute to Atom UI Components
 
 ## Support
 
-If you have any questions or need assistance, feel free to [open an issue](https://github.com/abdout/atom/issues) in the repository, or reach out to us on [Discord](https://discord.com/invite/uPa4gGG62c).
+If you have any questions or need assistance, feel free to [open an issue](https://github.com/abdout/auth/issues) in the repository, or reach out to us on [Discord](https://discord.com/invite/uPa4gGG62c).
 
