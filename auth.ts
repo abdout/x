@@ -3,10 +3,11 @@ import { UserRole } from "@prisma/client";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
 import { db } from "@/lib/db";
-import authConfig from "@/auth.config";
-import { getUserById } from "@/data/user";
-import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
-import { getAccountByUserId } from "./data/account";
+import { getUserById } from "@/components/auth/data/user";
+import { getTwoFactorConfirmationByUserId } from "@/components/auth/data/two-factor-confirmation";
+import { getAccountByUserId } from "@/components/auth/data/account";
+import authConfig from "./auth.config";
+
 
 export const {
   handlers: { GET, POST },

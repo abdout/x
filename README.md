@@ -1,10 +1,8 @@
-# Next Auth v5 - Advanced Guide (2024)
+# Auth
 
-![image](https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/assets/23248726/d0175397-8c3f-4e82-91c4-78c14f29bb81)
+Welcome to the Auth repository! A reuseable block for authentication and authorization, built using Authjs v5, Nextjs 14, React 18, Typescript,  Tailwind css, Shadch, mongoDB, and Prisma
 
-This is a repository for Next Auth v5 - Advanced Guide (2024)
-
-[VIDEO TUTORIAL](https://youtu.be/1MTyCvS05V4)
+The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
 
 Key Features:
 - 🔐 Next-auth v5 (Auth.js)
@@ -44,54 +42,55 @@ Key Features:
 
 **Node version 18.7.x**
 
-### Cloning the repository
+### Installation
 
-```shell
-git clone https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide.git
-```
+1. Clone the repository to your local machine:
 
-### Install packages
+    ```bash
+    git clone https://github.com/abdout/auth.git
+    ```
 
-```shell
-npm i
-```
+2. Navigate to the project directory:
 
-### Setup .env file
+    ```bash
+    cd auth
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+4. Setup .env file
 
 
 ```js
-DATABASE_URL=
+MONOGDB_URI=
 DIRECT_URL=
-
 AUTH_SECRET=
-
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-
 RESEND_API_KEY=
-
 NEXT_PUBLIC_APP_URL=
+DOMAIN=
 ```
 
-### Setup Prisma
+5. Setup Prisma
 ```shell
 npx prisma generate
 npx prisma db push
 ```
 
-### Start the app
+6. Run the development server:
 
-```shell
-npm run dev
-```
+    ```bash
+    npm run dev
+    ```
 
-## Available commands
+- Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the components.
 
-Running commands with npm `npm run [command]`
+### Documentation 
 
-| command         | description                              |
-| :-------------- | :--------------------------------------- |
-| `dev`           | Starts a development instance of the app |
+To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/auth/blob/main/TRD.md).  
+
+# Support
+
+If you have any questions or need assistance, feel free to [open an issue](https://github.com/abdout/auth/issues) in the repository, or reach out to us on [Discord](https://discord.com/invite/uPa4gGG62c).
