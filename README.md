@@ -2,7 +2,7 @@
 
 Welcome to the Auth repository! A reuseable block for authentication and authorization, built using Authjs, Nextjs, React, Typescript, Tailwind css, Shadch, mongoDB, and Prisma
 
-The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
+### The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
 
 Key Features:
 - 🔐 Next-auth v5 (Auth.js)
