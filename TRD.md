@@ -1,6 +1,6 @@
 
 Welcome to   
-**Auth's Technical Record Document (TRD)**
+## Auth's Technical Record Document (TRD)
 
 The **Objective** of Auth is to build a reusable block for authentication and authorization, developed by a community of interest.
 
