@@ -6,7 +6,7 @@ Welcome to the Auth repository! A reuseable block for authentication and authori
 ### Thanks to the Code With Antonio YouTube channel -->
 
 **The code inspired by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).**  
-**Thanks to the Code With Antonio YouTube channel**
+**Credit goes to [Antonio Erdeljac](https://github.com/AntonioErdeljac)**
 
 Key Features:
 - 🔐 Next-auth v5 (Auth.js)
