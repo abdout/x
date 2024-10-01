@@ -1,8 +1,8 @@
 
-**Welcome to**    
-**Atom's Technical Record Document (TRD)** 
+Welcome to   
+# Auth's Technical Record Document (TRD)
 
-The **Objective** of Auth, is to build authentication and authorization for [Databayt](https://github.com/abdout/databayt).  
+The Objective of Auth is to build a **reusable block** for authentication and authorization, developed by a community of interest.
 
 **Table of Contents**
 1. [Introduction](#introduction)
