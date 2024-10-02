@@ -94,7 +94,7 @@ const SettingsPage = () => {
             className="space-y-6" 
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <div className="grid grid-cols-2 gap-14">
+            <div className="grid grid-cols-2 gap-20">
             <div className="space-y-3">
               <FormField
                 control={form.control}

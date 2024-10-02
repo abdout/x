@@ -26,7 +26,7 @@ export const Navbar = () => {
           <Link href="/admin" className={linkStyle("/admin")}>
             Admin
           </Link>
-          <Link href="/settings" className={linkStyle("/setting")}>
+          <Link href="/setting" className={linkStyle("/setting")}>
             Setting
           </Link>
         </div>
