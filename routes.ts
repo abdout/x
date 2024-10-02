@@ -9,7 +9,7 @@ export const publicRoutes = [
   "/admin",
   "/client",
   "/server",
-  "/settings",
+  "/setting",
 ];
 
 /**
@@ -36,4 +36,4 @@ export const apiAuthPrefix = "/api/auth";
  * The default redirect path after logging in
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/settings";
+export const DEFAULT_LOGIN_REDIRECT = "/setting";

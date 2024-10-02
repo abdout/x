@@ -16,7 +16,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="flex justify-center items-center px-4 py-7">
-        <div className="flex text-[16px] font-semibold gap-x-10">
+        <div className="flex text-[16px] font-medium gap-x-10">
           <Link href="/server" className={linkStyle("/server")}>
             Server
           </Link>
@@ -26,8 +26,8 @@ export const Navbar = () => {
           <Link href="/admin" className={linkStyle("/admin")}>
             Admin
           </Link>
-          <Link href="/settings" className={linkStyle("/settings")}>
-            Settings
+          <Link href="/settings" className={linkStyle("/setting")}>
+            Setting
           </Link>
         </div>
       </nav>
