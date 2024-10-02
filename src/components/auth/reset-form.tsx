@@ -49,14 +49,14 @@ export const ResetForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Forgot your password?"
+      headerLabel=""
       backButtonLabel="Back to login"
-      backButtonHref="/auth/login"
+      backButtonHref="/login"
     >
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6"
+          className="space-y-8"
         >
           <div className="space-y-4">
             <FormField
@@ -64,12 +64,12 @@ export const ResetForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="john.doe@example.com"
+                      placeholder="Email"
                       type="email"
                     />
                   </FormControl>
@@ -83,9 +83,9 @@ export const ResetForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full"
+            className="w-full h-12 tracking-wide text-[#fcfcfc]"
           >
-            Send reset email
+            Reset password
           </Button>
         </form>
       </Form>

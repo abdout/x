@@ -72,10 +72,10 @@ export const LoginForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Welcome back"
+      headerLabel=""
       backButtonLabel="Don't have an account?"
-      backButtonHref="/auth/register"
-      showSocial
+      backButtonHref="/register"
+      // showSocial
     >
       <Form {...form}>
         <form 
@@ -109,12 +109,12 @@ export const LoginForm = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      
                       <FormControl>
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="john.doe@example.com"
+                          placeholder="Email"
                           type="email"
                         />
                       </FormControl>
@@ -127,12 +127,12 @@ export const LoginForm = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      
                       <FormControl>
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="******"
+                          placeholder="Password"
                           type="password"
                         />
                       </FormControl>
@@ -142,7 +142,7 @@ export const LoginForm = () => {
                         asChild
                         className="px-0 font-normal"
                       >
-                        <Link href="/auth/reset">
+                        <Link href="/reset" className="tracking-wide">
                           Forgot password?
                         </Link>
                       </Button>
@@ -158,7 +158,7 @@ export const LoginForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full"
+            className="w-full h-12 text-[16px] text-[#fcfcfc]"
           >
             {showTwoFactor ? "Confirm" : "Login"}
           </Button>

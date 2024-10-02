@@ -52,15 +52,15 @@ export const RegisterForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Create an account"
+      headerLabel=""
       backButtonLabel="Already have an account?"
-      backButtonHref="/auth/login"
-      showSocial
+      backButtonHref="/login"
+      // showSocial
     >
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6"
+          className="space-y-8"
         >
           <div className="space-y-4">
             <FormField
@@ -68,12 +68,12 @@ export const RegisterForm = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  {/* <FormLabel>Name</FormLabel> */}
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="John Doe"
+                      placeholder="Name"
                     />
                   </FormControl>
                   <FormMessage />
@@ -85,12 +85,12 @@ export const RegisterForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  {/* <FormLabel>Email</FormLabel> */}
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="john.doe@example.com"
+                      placeholder="Email"
                       type="email"
                     />
                   </FormControl>
@@ -103,12 +103,12 @@ export const RegisterForm = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  {/* <FormLabel>Password</FormLabel> */}
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="******"
+                      placeholder="Password"
                       type="password"
                     />
                   </FormControl>
@@ -122,9 +122,9 @@ export const RegisterForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full"
+            className="w-full h-12 text-[16px] text-[#fcfcfc]"
           >
-            Create an account
+            Join
           </Button>
         </form>
       </Form>
