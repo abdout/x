@@ -83,7 +83,7 @@ export const ResetForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full h-12 tracking-wide text-[#fcfcfc]"
+            className="w-full h-12 tracking-wide text-[15.5px] text-[#fcfcfc]"
           >
             Reset password
           </Button>

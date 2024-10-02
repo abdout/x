@@ -1,12 +1,12 @@
 # Auth
 
-Welcome to the Auth repository! A reuseable block for authentication and authorization, built using Authjs, Nextjs, React, Typescript, Tailwind css, Shadch, mongoDB, and Prisma
+Welcome to Auth! A reuseable block for authentication and authorization, built using Authjs, Nextjs, React, Typescript, Tailwind css, Shadch, mongoDB, and Prisma.
 
 <!-- ### The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
 ### Thanks to the Code With Antonio YouTube channel -->
 
 **The code inspired by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).**  
-**Credit goes to [Antonio Erdeljac](https://github.com/AntonioErdeljac).**
+**Credits: [Antonio Erdeljac](https://github.com/AntonioErdeljac).**
 
 Key Features:
 - 🔐 Next-auth v5 (Auth.js)
@@ -41,10 +41,6 @@ Key Features:
 - 🔑 Change password with old password confirmation in Settings page
 - 🔔 Enable/disable two-factor auth in Settings page
 - 🔄 Change user role in Settings page (for development purposes only)
-
-### Prerequisites
-
-**Node version 18.7.x**
 
 ### Installation
 
