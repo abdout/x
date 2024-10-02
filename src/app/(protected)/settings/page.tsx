@@ -78,19 +78,24 @@ const SettingsPage = () => {
   }
 
   return ( 
-    <Card className="w-[600px]">
-      <CardHeader>
+    <Card className="w-[720px] -mt-10">
+      {/* <CardHeader>
         <p className="text-2xl font-semibold text-center">
           ⚙️ Settings
         </p>
-      </CardHeader>
+      </CardHeader> */}
       <CardContent>
+        
+
+
+        
         <Form {...form}>
           <form 
             className="space-y-6" 
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-14">
+            <div className="space-y-3">
               <FormField
                 control={form.control}
                 name="name"
@@ -166,6 +171,8 @@ const SettingsPage = () => {
                   />
                 </>
               )}
+              </div>
+              <div className="space-y-4">
               <FormField
                 control={form.control}
                 name="role"
@@ -204,7 +211,7 @@ const SettingsPage = () => {
                       <div className="space-y-0.5">
                         <FormLabel>Two Factor Authentication</FormLabel>
                         <FormDescription>
-                          Enable two factor authentication for your account
+                          Enable two factor authentication
                         </FormDescription>
                       </div>
                       <FormControl>
@@ -219,11 +226,13 @@ const SettingsPage = () => {
                 />
               )}
             </div>
+            </div>
             <FormError message={error} />
             <FormSuccess message={success} />
             <Button
               disabled={isPending}
               type="submit"
+              className="flex items-center justify-end"
             >
               Save
             </Button>

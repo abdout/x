@@ -3,50 +3,33 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
 import { UserButton } from "@/components/auth/user-button";
 
 export const Navbar = () => {
   const pathname = usePathname();
 
+  const linkStyle = (href: string) =>
+    pathname === href
+      ? "opacity-100"
+      : "opacity-50 hover:opacity-100 transition-opacity";
+
   return (
     <>
-      <nav className=" flex justify-center items-center px-4 py-7 ">
-        <div className="flex gap-x-4">
-          <Button
-            asChild
-            variant={pathname === "/server" ? "default" : "outline"}
-          >
-            <Link href="/server">
-              Server
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant={pathname === "/client" ? "default" : "outline"}
-          >
-            <Link href="/client">
-              Client
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant={pathname === "/admin" ? "default" : "outline"}
-          >
-            <Link href="/admin">
-              Admin
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant={pathname === "/settings" ? "default" : "outline"}
-          >
-            <Link href="/settings">
-              Settings
-            </Link>
-          </Button>
+      <nav className="flex justify-center items-center px-4 py-7">
+        <div className="flex text-[16px] font-semibold gap-x-10">
+          <Link href="/server" className={linkStyle("/server")}>
+            Server
+          </Link>
+          <Link href="/client" className={linkStyle("/client")}>
+            Client
+          </Link>
+          <Link href="/admin" className={linkStyle("/admin")}>
+            Admin
+          </Link>
+          <Link href="/settings" className={linkStyle("/settings")}>
+            Settings
+          </Link>
         </div>
-
       </nav>
       <div className="absolute top-7 right-10">
         <UserButton />
