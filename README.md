@@ -42,6 +42,10 @@ Key Features:
 - 🔔 Enable/disable two-factor auth in Settings page
 - 🔄 Change user role in Settings page (for development purposes only)
 
+### Documentation 
+
+To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/auth/blob/main/TRD.md).  
+
 ### Installation
 
 1. Clone the repository to your local machine:
@@ -85,11 +89,7 @@ npx prisma db push
     npm run dev
     ```
 
-- Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the components.
-
-### Documentation 
-
-To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/auth/blob/main/TRD.md).  
+- Navigate to [http://localhost:3000](http://localhost:3000).
 
 # Support
 
