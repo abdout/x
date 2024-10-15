@@ -1,43 +1,36 @@
-import { db } from "@/lib/db";
+import { connectDB } from "@/lib/mongodb";
+import User from "@/lib/models/user.model";
 
-// Get verification token by token string
 export const getVerificationTokenByToken = async (token: string) => {
   try {
-    console.log("Searching for verification token by token:", token); // Log the token being searched
-    const verificationToken = await db.verificationToken.findUnique({
-      where: { token }
-    });
-
-    if (!verificationToken) {
-      console.error("Token not found in the database:", token); // Log if token is not found
+    await connectDB();
+    const user = await User.findOne({ "verificationToken.token": token });
+    
+    if (!user || !user.verificationToken) {
+      console.error("Verification token not found for token:", token);
       return null;
     }
-
-    console.log("Verification token retrieved successfully:", verificationToken); // Log the retrieved token
-    return verificationToken;
+    
+    return user.verificationToken;
   } catch (error) {
-    console.error("Error retrieving token from the database:", error); // Log the error in detail
+    console.error("Error retrieving verification token by token:", error);
     return null;
   }
 };
 
-// Get verification token by email
 export const getVerificationTokenByEmail = async (email: string) => {
   try {
-    console.log("Searching for verification token by email:", email); // Log the email being searched
-    const verificationToken = await db.verificationToken.findFirst({
-      where: { email }
-    });
-
-    if (!verificationToken) {
-      console.error("Token not found for the email in the database:", email); // Log if token is not found for the email
+    await connectDB();
+    const user = await User.findOne({ email });
+    
+    if (!user || !user.verificationToken) {
+      console.error("Verification token not found for email:", email);
       return null;
     }
-
-    console.log("Verification token retrieved successfully for email:", verificationToken); // Log the retrieved token
-    return verificationToken;
+    
+    return user.verificationToken;
   } catch (error) {
-    console.error("Error retrieving token by email from the database:", error); // Log the error in detail
+    console.error("Error retrieving verification token by email:", error);
     return null;
   }
-}
+};

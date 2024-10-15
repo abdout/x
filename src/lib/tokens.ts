@@ -1,81 +1,60 @@
 import crypto from "crypto";
 import { v4 as uuidv4 } from "uuid";
-import { getTwoFactorTokenByEmail } from "@/components/auth/data/two-factor-token";
-import { db } from "@/lib/db";
-import { getPasswordResetTokenByEmail } from "@/components/auth/data/password-reset-token";
-import { getVerificationTokenByEmail } from "@/components/auth/data/verificiation-token";
+import { connectDB } from "@/lib/mongodb";
+import TwoFactorToken from "@/components/auth/model/factor-token";
+import PasswordResetToken from "@/components/auth/model/password";
+import VerificationToken from "@/components/auth/model/verification";
 
-
-
+// Generate a Two-Factor Authentication Token
 export const generateTwoFactorToken = async (email: string) => {
+  // Connect to the MongoDB database
+  await connectDB();
+
   const token = crypto.randomInt(100_000, 1_000_000).toString();
-  const expires = new Date(new Date().getTime() + 5 * 60 * 1000);
+  const expires = new Date(Date.now() + 5 * 60 * 1000); // Expires in 5 minutes
 
-  const existingToken = await getTwoFactorTokenByEmail(email);
+  // Check for an existing token and delete it
+  await TwoFactorToken.findOneAndDelete({ email });
 
-  if (existingToken) {
-    await db.twoFactorToken.delete({
-      where: {
-        id: existingToken.id,
-      }
-    });
-  }
+  // Create and save a new token
+  const newToken = new TwoFactorToken({ email, token, expires });
+  await newToken.save();
 
-  const twoFactorToken = await db.twoFactorToken.create({
-    data: {
-      email,
-      token,
-      expires,
-    }
-  });
+  return newToken;
+};
 
-  return twoFactorToken;
-}
-
+// Generate a Password Reset Token
 export const generatePasswordResetToken = async (email: string) => {
+  // Connect to the MongoDB database
+  await connectDB();
+
   const token = uuidv4();
-  const expires = new Date(new Date().getTime() + 3600 * 1000);
+  const expires = new Date(Date.now() + 3600 * 1000); // Expires in 1 hour
 
-  const existingToken = await getPasswordResetTokenByEmail(email);
+  // Check for an existing token and delete it
+  await PasswordResetToken.findOneAndDelete({ email });
 
-  if (existingToken) {
-    await db.passwordResetToken.delete({
-      where: { id: existingToken.id }
-    });
-  }
+  // Create and save a new token
+  const newToken = new PasswordResetToken({ email, token, expires });
+  await newToken.save();
 
-  const passwordResetToken = await db.passwordResetToken.create({
-    data: {
-      email,
-      token,
-      expires
-    }
-  });
+  return newToken;
+};
 
-  return passwordResetToken;
-}
-
+// Generate a Verification Token
 export const generateVerificationToken = async (email: string) => {
+  // Connect to the MongoDB database
+  await connectDB();
+
   const token = uuidv4();
-  const expires = new Date(new Date().getTime() + 24 * 3600 * 1000);
+  const expires = new Date(Date.now() + 24 * 3600 * 1000); // Expires in 24 hours
 
-  const existingToken = await getVerificationTokenByEmail(email);
+  // Check for an existing token and delete it
+  await VerificationToken.findOneAndDelete({ email });
 
-  if (existingToken) {
-    await db.verificationToken.delete({
-      where: {
-        id: existingToken.id,
-      },
-    });
-  }
+  // Create and save a new token
+  const newToken = new VerificationToken({ email, token, expires });
+  await newToken.save();
 
-  const verficationToken = await db.verificationToken.create({
-    data: {
-      email,
-      token,
-      expires,
-    }
-  });
-
-  return verficationToken;
+  return newToken;
 };

@@ -1,25 +1,24 @@
-import { db } from "@/lib/db";
+import { connectDB } from "@/lib/mongodb";
+import User from "@/lib/models/user.model";
 
 export const getTwoFactorTokenByToken = async (token: string) => {
   try {
-    const twoFactorToken = await db.twoFactorToken.findUnique({
-      where: { token }
-    });
-
-    return twoFactorToken;
-  } catch {
+    await connectDB();
+    const user = await User.findOne({ "twoFactorToken.token": token });
+    return user?.twoFactorToken || null;
+  } catch (error) {
+    console.error("Error in getTwoFactorTokenByToken:", error);
     return null;
   }
 };
 
 export const getTwoFactorTokenByEmail = async (email: string) => {
   try {
-    const twoFactorToken = await db.twoFactorToken.findFirst({
-      where: { email }
-    });
-
-    return twoFactorToken;
-  } catch {
+    await connectDB();
+    const user = await User.findOne({ email });
+    return user?.twoFactorToken || null;
+  } catch (error) {
+    console.error("Error in getTwoFactorTokenByEmail:", error);
     return null;
   }
 };

@@ -1,15 +1,13 @@
-import { db } from "@/lib/db";
+import { connectDB } from "@/lib/mongodb";
+import User from "@/lib/models/user.model";
 
-export const getTwoFactorConfirmationByUserId = async (
-  userId: string
-) => {
+export const getTwoFactorConfirmationByUserId = async (userId: string) => {
   try {
-    const twoFactorConfirmation = await db.twoFactorConfirmation.findUnique({
-      where: { userId }
-    });
-
-    return twoFactorConfirmation;
-  } catch {
+    await connectDB();
+    const user = await User.findOne({ id: userId });
+    return user?.twoFactorConfirmation || null;
+  } catch (error) {
+    console.error("Error in getTwoFactorConfirmationByUserId:", error);
     return null;
   }
 };
